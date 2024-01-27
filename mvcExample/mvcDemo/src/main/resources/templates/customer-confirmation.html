@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Accepted!</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<p th:text="'Welcome Mr/Ms ' + ${customer.getLastName()}" class="basic"></p>
+
+</body>
+</html>
