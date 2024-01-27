@@ -45,7 +45,7 @@ public class EmployeeRestController {
     public String deleteEmployee(@PathVariable int employee_id) {
         Employee employee = employeeService.findById(employee_id);
         if (employee == null) {
-            throw new RuntimeException("Employee not in database!");
+            throw new RuntimeException("Employee not in database.");
         }
         employeeService.deleteById(employee_id);
         return "Deleted employee with ID " + employee_id;
