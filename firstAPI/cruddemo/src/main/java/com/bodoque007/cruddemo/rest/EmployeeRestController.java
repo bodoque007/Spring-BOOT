@@ -26,7 +26,7 @@ public class EmployeeRestController {
     public Employee getByID(@PathVariable int employee_id) {
         Employee employee = employeeService.findById(employee_id);
         if (employee == null) {
-            throw new RuntimeException("Employee not found!");
+            throw new RuntimeException("Employee not found.");
         }
         return employee;
     }
