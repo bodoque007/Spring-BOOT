@@ -2,14 +2,16 @@ package com.bodoque007.cruddemo.rest;
 
 import com.bodoque007.cruddemo.entity.Employee;
 import com.bodoque007.cruddemo.service.EmployeeService;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
 @RestController
-@RequestMapping("/api")
 public class EmployeeRestController {
-    private EmployeeService employeeService;
+    private final EmployeeService employeeService;
 
     public EmployeeRestController(EmployeeService employeeService) {
         this.employeeService = employeeService;
