@@ -15,7 +15,7 @@ import java.lang.annotation.Target;
 public @interface BeginsWith {
     public String value() default "bodoque";
 
-    public String message() default "Must begin with bodoque";
+    public String message() default "Must begin with bodoque!";
 
     Class<?>[] groups() default {};
 
