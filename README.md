@@ -1,1 +1,1 @@
-Spring boot practice, mainly following Chad Derby's Udemy course but deviating from it on specifics.
+Some Spring Boot basic, small practice projects. As for now, a project implementing some Spring security features, another implementing a basic REST API and another implementing a basic CRUD app with thymeleaf on the frontend using Thymeleaf.
