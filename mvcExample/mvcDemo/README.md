@@ -18,37 +18,18 @@ This is a basic Spring Boot project that demonstrates form validation using Thym
 - [Maven](https://maven.apache.org/) build tool.
 
 ### Running the Application
-
-1. Clone the repository:
-
-    ```bash
-    git clone https://github.com/yourusername/spring-boot-validation.git
-    ```
-
-2. Navigate to the project directory:
-
-    ```bash
-    cd spring-boot-validation
-    ```
-
-3. Build and run the application:
+2. Navigate to the project directory
+3. Configure your MySQL database details in the application (By default, "root" user with password "root" with database on localhost:3306).
+4. Build and run the application:
 
     ```bash
     mvn spring-boot:run
     ```
 
-4. Open your web browser and go to [http://localhost:8080](http://localhost:8080) to access the form. The validations check that the customer's favorite number is between 0 and 100, the last name is not null and that the couponCode begins with "bodoque".
+5. Open your web browser and go to [http://localhost:8080](http://localhost:8080) to access the form. The validations check that the customer's favorite number is between 0 and 100, the last name is not null and that the couponCode begins with "bodoque".
 
 ## Features
 
 - **Form Validation**: Demonstrates basic form validation using Spring Boot.
 - **Thymeleaf Templates**: Utilizes Thymeleaf for server-side rendering of HTML templates.
 - **DevTools Integration**: Enables automatic restarts during development.
-
-## Project Structure
-
-- `src/main/java/com/example/demo`: Contains the main application class.
-- `src/main/resources/templates`: Thymeleaf HTML templates.
-- `src/main/resources/static`: Static resources (CSS, JS, etc.).
-- `src/test/java/com/example/demo`: Test classes.
-
