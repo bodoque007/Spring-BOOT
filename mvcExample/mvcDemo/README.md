@@ -18,15 +18,14 @@ This is a basic Spring Boot project that demonstrates form validation using Thym
 - [Maven](https://maven.apache.org/) build tool.
 
 ### Running the Application
-2. Navigate to the project directory
-3. Configure your MySQL database details in the application (By default, "root" user with password "root" with database on localhost:3306).
-4. Build and run the application:
+1. Navigate to the project directory
+2. (OPTIONAL) Configure your MySQL database details in the application (By default, "root" user with password "root" with database on localhost:3306).
+3Build and run the application:
 
     ```bash
     mvn spring-boot:run
     ```
-
-5. Open your web browser and go to [http://localhost:8080](http://localhost:8080) to access the form. The validations check that the customer's favorite number is between 0 and 100, the last name is not null and that the couponCode begins with "bodoque".
+4. Open your web browser and go to [http://localhost:8080](http://localhost:8080) to access the form. The validations check that the customer's favorite number is between 0 and 100, the last name is not null and that the couponCode begins with "bodoque".
 
 ## Features
 
