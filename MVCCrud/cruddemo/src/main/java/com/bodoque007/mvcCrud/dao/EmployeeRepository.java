@@ -1,4 +1,4 @@
-package com.bodoque007.mvcCrud.repository;
+package com.bodoque007.mvcCrud.dao;
 
 import com.bodoque007.mvcCrud.entity.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -9,5 +9,5 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
     //Bang!
 
     // method to sort by last name
-    public List<Employee> findAllByOrderByLastNameAsc();
+    List<Employee> findAllByOrderByLastNameAsc();
 }

@@ -2,7 +2,7 @@ package com.bodoque007.mvcCrud.service;
 
 
 import com.bodoque007.mvcCrud.entity.Employee;
-import com.bodoque007.mvcCrud.repository.EmployeeRepository;
+import com.bodoque007.mvcCrud.dao.EmployeeRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
