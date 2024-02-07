@@ -21,7 +21,7 @@ This CRUD web application allows you to perform basic operations on data entitie
 2. Clone this repository.
 3. Go to the repository's location
 4. Configure your MySQL database details in the application (By default, "root" user with password "root" with database on localhost:3306) and execute the script on "sql-scripts" folder to set up the example database.
-5Run the application using Maven:
+5. Run the application using Maven:
    ```bash
    mvn spring-boot:run
 6. By default, the main site is on http://localhost:8080/employees/list URL, in which you can add, delete and update the entities (employees).
