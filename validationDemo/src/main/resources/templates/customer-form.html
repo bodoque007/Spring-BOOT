@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Form</title>
+
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body class="container">
+
+<h2 class="mt-4 mb-4">Customer Information Form</h2>
+
+<form th:action="@{/processForm}" th:object="${customer}" method="post" class="mb-4">
+
+    <!-- First Name -->
+    <div class="form-group">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" th:field="*{firstName}" class="form-control">
+    </div>
+
+    <!-- Favorite Number -->
+    <div class="form-group">
+        <label for="favoriteNumber">Favorite Number:</label>
+        <input type="text" id="favoriteNumber" name="favoriteNumber" th:field="*{favoriteNumber}" class="form-control">
+        <!-- Show error message if present -->
+        <span th:if="${#fields.hasErrors('favoriteNumber')}"
+              th:errors="*{favoriteNumber}"
+              class="error"></span>
+    </div>
+
+    <!-- Last Name -->
+    <div class="form-group">
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" th:field="*{lastName}" class="form-control">
+        <!-- Show error message if present -->
+        <span th:if="${#fields.hasErrors('lastName')}"
+              th:errors="*{lastName}"
+              class="error"></span>
+    </div>
+
+    <!-- Coupon Code -->
+    <div class="form-group">
+        <label for="couponCode">Coupon Code:</label>
+        <input type="text" id="couponCode" name="couponCode" th:field="*{couponCode}" class="form-control">
+        <!-- Show error message if present -->
+        <span th:if="${#fields.hasErrors('couponCode')}"
+              th:errors="*{couponCode}"
+              class="error"></span>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
+</body>
+</html>
