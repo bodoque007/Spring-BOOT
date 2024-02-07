@@ -7,7 +7,7 @@ This is a very basic CRUD (Create, Read, Update, Delete) web application built u
 - [MySQL](https://www.mysql.com/) 
 ![MySQL Logo](https://www.vectorlogo.zone/logos/mysql/mysql-icon.svg)
 - [JPA (Java Persistence API)](https://www.oracle.com/java/technologies/persistence-jsp.html)
-- ![JPA Logo](https://www.vectorlogo.zone/logos/java/java-icon.svg)
+ ![JPA Logo](https://www.vectorlogo.zone/logos/java/java-icon.svg)
 - [Thymeleaf](https://www.thymeleaf.org/) 
 ![Thymeleaf Logo](https://seeklogo.com/images/T/thymeleaf-logo-7EA70A2DC4-seeklogo.com.png)
 
