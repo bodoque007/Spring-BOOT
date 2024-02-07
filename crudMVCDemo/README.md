@@ -19,5 +19,5 @@ This CRUD web application allows you to perform basic operations on data entitie
 
 1. Ensure you have Java and Maven installed.
 2. Clone this repository.
-3. Configure your MySQL database details in the application (By default, "root" user with password "root" with database on localhost:3306).
+3. Configure your MySQL database details in the application (By default, "root" user with password "root" with database on localhost:3306) and run the SQL script on sql-scripts folder.
 4. By default, the main site is on http://localhost:8080/employees/list URL.
