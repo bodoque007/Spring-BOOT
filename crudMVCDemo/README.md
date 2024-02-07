@@ -13,11 +13,15 @@ This is a very basic CRUD (Create, Read, Update, Delete) web application built u
 
 ## Description
 
-This CRUD web application allows you to perform basic operations on data entities using a user-friendly interface.
+This CRUD web application allows you to perform basic operations on data entities (employees) using a user-friendly interface.
 
 ## How to Run
 
-1. Ensure you have Java and Maven installed.
+1. Ensure you have Java version 17 (or higher) installed.
 2. Clone this repository.
-3. Configure your MySQL database details in the application (By default, "root" user with password "root" with database on localhost:3306).
-4. By default, the main site is on http://localhost:8080/employees/list URL.
+3. Go to the repository's location
+4. Configure your MySQL database details in the application (By default, "root" user with password "root" with database on localhost:3306) and execute the script on "sql-scripts" folder to set up the example database.
+5Run the application using Maven:
+   ```bash
+   mvn spring-boot:run
+6. By default, the main site is on http://localhost:8080/employees/list URL, in which you can add, delete and update the entities (employees).

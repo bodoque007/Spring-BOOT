@@ -54,6 +54,8 @@ The project includes an SQL script (`sql-scripts/spring-security-setup.sql`) tha
 1. Clone this repository.
    ```bash
    git clone https://github.com/yourusername/SecurityDemo.git
-2. Run as any other spring boot app using maven.
+2. Configure your MySQL database details in the application (By default, "root" user with password "root" with database on localhost:3306) and run the SQL script on sql-scripts folder.
+3. Run as any other spring boot app using maven.
    ```bash
    mvn spring-boot:run
+4. Go to localhost:8080 (by default) in your browser and try logging with each user to see the difference based on their role.

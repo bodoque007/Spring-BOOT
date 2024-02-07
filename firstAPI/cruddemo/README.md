@@ -20,7 +20,8 @@ This project provides a RESTful API for basic CRUD operations on an employee dat
 2. Clone this repository.
 3. Configure your MySQL database details in the application.properties file.
     - By default, the database is set to localhost:3036 with root as both the username and password. The database should be created using the sql script inside the "sql-scripts" folder.
-4. Run the application using Maven:
+4. Go to the repository's location
+5. Run the application using Maven:
    ```bash
    mvn spring-boot:run
-5. Go to localhost:8080/employees by default, if you haven't changed the app's port.
+6. Go to localhost:8080/employees by default, if you haven't changed the app's port. It requires external software as Postman to post, put or delete. Thus, the version in crudMVCDemo is much better, as it implements a UI to add, delete or update employees.
