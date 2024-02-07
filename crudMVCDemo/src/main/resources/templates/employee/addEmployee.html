@@ -13,7 +13,7 @@
 <div class="container">
     <h2 class="mt-4">Employee Information Form</h2>
 
-    <form th:action="@{/employees/save}" th:object="${employee}" method="post" class="mt-4">
+    <form th:action="@{/employee/save}" th:object="${employee}" method="post" class="mt-4">
         <!-- Hidden form field to handle update -->
         <input type="hidden" th:field="*{id}">
         <!-- First Name -->
@@ -38,7 +38,7 @@
         <button type="submit" class="btn btn-primary">Submit</button>
 
         <!-- Navigation Link -->
-        <a th:href="@{/employees/list}" class="btn btn-secondary ms-2">Go back to Employee List</a>
+        <a th:href="@{/employee/list}" class="btn btn-secondary ms-2">Go back to Employee List</a>
     </form>
 </div>
 

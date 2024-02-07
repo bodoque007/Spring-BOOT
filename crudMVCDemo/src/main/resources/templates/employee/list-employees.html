@@ -18,7 +18,7 @@
 
 	<h3>Employee Directory</h3>
 	<hr>
-	<a class="btn btn-primary" th:href="@{'/employees/addEmployee'}">Add employee</a>
+	<a class="btn btn-primary" th:href="@{'/employee/addEmployee'}">Add employee</a>
 
 	<table class="table table-bordered table-striped">
 		<thead class="table-dark">
@@ -37,8 +37,8 @@
 				<td th:text="${tempEmployee.lastName}" />	
 				<td th:text="${tempEmployee.email}" />
 				<td>
-					<a class="btn btn-secondary" th:href="@{/employees/updateEmployee(employeeId=${tempEmployee.id})}">Update</a>
-					<a class="btn btn-danger" onclick="if (!(confirm('Are you sure you want to do this?...'))) return false" th:href="@{/employees/delete(employeeId=${tempEmployee.id})}">Delete</a>
+					<a class="btn btn-secondary" th:href="@{/employee/updateEmployee(employeeId=${tempEmployee.id})}">Update</a>
+					<a class="btn btn-danger" onclick="if (!(confirm('Are you sure you want to do this?...'))) return false" th:href="@{/employee/delete(employeeId=${tempEmployee.id})}">Delete</a>
 				</td>
 
 

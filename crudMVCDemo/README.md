@@ -10,6 +10,8 @@ This is a very basic CRUD (Create, Read, Update, Delete) web application built u
  ![JPA Logo](https://www.vectorlogo.zone/logos/java/java-icon.svg)
 - [Thymeleaf](https://www.thymeleaf.org/) 
 ![Thymeleaf Logo](https://seeklogo.com/images/T/thymeleaf-logo-7EA70A2DC4-seeklogo.com.png)
+- [Project Lombok](https://projectlombok.org/)
+
 
 ## Description
 
@@ -24,4 +26,4 @@ This CRUD web application allows you to perform basic operations on data entitie
 5. Run the application using Maven:
    ```bash
    mvn spring-boot:run
-6. By default, the main site is on http://localhost:8080/employees/list URL, in which you can add, delete and update the entities (employees).
+6. By default, the main site is on http://localhost:8080/employee/list URL, in which you can add, delete and update the entities (employees).

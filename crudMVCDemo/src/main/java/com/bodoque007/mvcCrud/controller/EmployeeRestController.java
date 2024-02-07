@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @Controller
-@RequestMapping("/employees")
+@RequestMapping("/employee")
 public class EmployeeRestController {
     private final EmployeeService employeeService;
 
@@ -29,7 +29,7 @@ public class EmployeeRestController {
     @PostMapping("/save")
     public String saveEmployee(@ModelAttribute("employee") Employee employee) {
         employeeService.save(employee);
-        return "redirect:/employees/list";
+        return "redirect:/employee/list";
     }
     @GetMapping("/updateEmployee")
     public String updateEmployee(@RequestParam("employeeId") int id, Model model) {
@@ -41,6 +41,6 @@ public class EmployeeRestController {
     @GetMapping("/delete")
     public String deleteEmployee(@RequestParam("employeeId") int id) {
         employeeService.deleteById(id);
-        return "redirect:/employees/list";
+        return "redirect:/employee/list";
     }
 }
