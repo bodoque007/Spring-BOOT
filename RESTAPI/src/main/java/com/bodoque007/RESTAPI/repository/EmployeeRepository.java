@@ -1,6 +1,6 @@
-package com.bodoque007.cruddemo.repository;
+package com.bodoque007.RESTAPI.repository;
 
-import com.bodoque007.cruddemo.entity.Employee;
+import com.bodoque007.RESTAPI.entity.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface EmployeeRepository extends JpaRepository<Employee, Integer> {

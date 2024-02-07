@@ -1,12 +1,11 @@
-package com.bodoque007.cruddemo.service;
+package com.bodoque007.RESTAPI.service;
 
 
-import com.bodoque007.cruddemo.entity.Employee;
-import com.bodoque007.cruddemo.repository.EmployeeRepository;
+import com.bodoque007.RESTAPI.entity.Employee;
+import com.bodoque007.RESTAPI.repository.EmployeeRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {

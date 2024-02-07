@@ -1,13 +1,13 @@
-package com.bodoque007.cruddemo;
+package com.bodoque007.RESTAPI;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CruddemoApplication {
+public class RESTAPIApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CruddemoApplication.class, args);
+		SpringApplication.run(RESTAPIApplication.class, args);
 	}
 
 }

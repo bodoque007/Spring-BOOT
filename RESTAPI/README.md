@@ -24,4 +24,4 @@ This project provides a RESTful API for basic CRUD operations on an employee dat
 5. Run the application using Maven:
    ```bash
    mvn spring-boot:run
-6. Go to localhost:8080/employees by default, if you haven't changed the app's port. It requires external software as Postman to post, put or delete. Thus, the version in crudMVCDemo is much better, as it implements a UI to add, delete or update employees.
+6. Go to http://localhost:8080/employee by default, if you haven't changed the app's port. For HTTP Verbs, the api follows REST principles (for example, to get the employee with ID 1, make a get request to localhost:8080/employee/1). It requires external software as Postman to post, put or delete. Thus, the version in crudMVCDemo is much better, as it's instead an MVC CRUD web app that implements a UI to add, delete or update employees.

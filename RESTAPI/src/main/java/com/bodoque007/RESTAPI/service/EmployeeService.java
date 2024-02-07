@@ -1,9 +1,8 @@
-package com.bodoque007.cruddemo.service;
+package com.bodoque007.RESTAPI.service;
 
-import com.bodoque007.cruddemo.entity.Employee;
+import com.bodoque007.RESTAPI.entity.Employee;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface EmployeeService {
     List<Employee> findAll();
