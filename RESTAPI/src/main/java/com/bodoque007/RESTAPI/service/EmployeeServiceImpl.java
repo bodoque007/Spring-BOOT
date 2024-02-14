@@ -3,9 +3,11 @@ package com.bodoque007.RESTAPI.service;
 
 import com.bodoque007.RESTAPI.entity.Employee;
 import com.bodoque007.RESTAPI.repository.EmployeeRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
@@ -38,13 +40,30 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 
     @Override
+    @Transactional
     public Employee save(Employee employee) {
         return employeeRepository.save(employee);
     }
 
 
     @Override
+    @Transactional
     public void deleteById(int id) {
         employeeRepository.deleteById(id);
+    }
+
+    @Override
+    @Transactional
+    public Employee updateById(int id, Employee employee) {
+        Employee foundEmployee = employeeRepository.findById(id).orElse(null);
+
+        if (foundEmployee != null) {
+            foundEmployee.setFirstName(employee.getFirstName());
+            foundEmployee.setLastName(employee.getLastName());
+            foundEmployee.setEmail(employee.getEmail());
+            return employeeRepository.save(foundEmployee);
+        } else {
+            return null;
+        }
     }
 }
