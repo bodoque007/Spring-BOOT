@@ -2,14 +2,13 @@ package com.bodoque007.RESTAPI.controller;
 
 import com.bodoque007.RESTAPI.entity.Employee;
 import com.bodoque007.RESTAPI.service.EmployeeService;
-import org.apache.coyote.Response;
+
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 
 @RestController

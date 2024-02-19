@@ -1,7 +1,6 @@
 package com.bodoque007.RESTAPI.model;
 
 import com.opencsv.bean.CsvBindByName;
-import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
