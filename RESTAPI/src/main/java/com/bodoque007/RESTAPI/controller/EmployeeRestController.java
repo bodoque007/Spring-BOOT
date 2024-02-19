@@ -1,7 +1,9 @@
-package com.bodoque007.RESTAPI.rest;
+package com.bodoque007.RESTAPI.controller;
 
 import com.bodoque007.RESTAPI.entity.Employee;
 import com.bodoque007.RESTAPI.service.EmployeeService;
+import org.apache.coyote.Response;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,8 +21,9 @@ public class EmployeeRestController {
     }
 
     @GetMapping(value = {"/employees", "/employees/"})
-    public List<Employee> findAll() {
-        return employeeService.findAll();
+    public Page<Employee> findAll(@RequestParam(required = false) Integer pageNumber,
+                                  @RequestParam(required = false) Integer pageSize) {
+        return employeeService.findAll(pageNumber, pageSize);
     }
 
     @GetMapping("/employees/{employee_id}")
@@ -43,7 +46,7 @@ public class EmployeeRestController {
     @PutMapping("/employees/{employee_id}")
     public ResponseEntity<Void> updateEmployee(@RequestBody Employee employee, @PathVariable int employee_id) {
         if (employeeService.updateById(employee_id, employee) == null) {
-            throw new NotFoundException();
+            return ResponseEntity.notFound().build();
         }
         return ResponseEntity.noContent().build(); // Success
     }
