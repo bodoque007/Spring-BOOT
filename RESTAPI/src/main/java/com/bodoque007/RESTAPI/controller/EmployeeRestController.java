@@ -39,7 +39,7 @@ public class EmployeeRestController {
         employee.setId(0);
         Employee savedEmployee = employeeService.save(employee);
         HttpHeaders headers = new HttpHeaders();
-        headers.add("Location", "/employee/" + Integer.toString(savedEmployee.getId()));
+        headers.add("Location", EMPLOYEE_ENDPOINT + "/" + (savedEmployee.getId()));
         return new ResponseEntity<>(headers, HttpStatus.CREATED);
     }
 
