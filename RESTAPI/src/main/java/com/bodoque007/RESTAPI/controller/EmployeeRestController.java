@@ -14,18 +14,19 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class EmployeeRestController {
     private final EmployeeService employeeService;
-
+    private static final String EMPLOYEE_ENDPOINT = "/employees";
+    private static final String EMPLOYEE_ENDPOINT_ID = EMPLOYEE_ENDPOINT + "/{employee_id}";
     public EmployeeRestController(EmployeeService employeeService) {
         this.employeeService = employeeService;
     }
 
-    @GetMapping(value = {"/employees", "/employees/"})
+    @GetMapping(value = {EMPLOYEE_ENDPOINT, EMPLOYEE_ENDPOINT + "/"})
     public Page<Employee> findAll(@RequestParam(required = false) Integer pageNumber,
                                   @RequestParam(required = false) Integer pageSize) {
         return employeeService.findAll(pageNumber, pageSize);
     }
 
-    @GetMapping("/employees/{employee_id}")
+    @GetMapping(EMPLOYEE_ENDPOINT_ID)
     public ResponseEntity<Employee> getByID(@PathVariable int employee_id) {
         Employee employee = employeeService.findById(employee_id);
         if (employee == null) {
@@ -33,7 +34,7 @@ public class EmployeeRestController {
         }
         return ResponseEntity.ok(employee);
     }
-    @PostMapping(value = {"/employees", "/employees/"})
+    @PostMapping(value = {EMPLOYEE_ENDPOINT, EMPLOYEE_ENDPOINT + "/"})
     public ResponseEntity<Employee> addEmployee(@RequestBody Employee employee) {
         employee.setId(0);
         Employee savedEmployee = employeeService.save(employee);
@@ -42,14 +43,14 @@ public class EmployeeRestController {
         return new ResponseEntity<>(headers, HttpStatus.CREATED);
     }
 
-    @PutMapping("/employees/{employee_id}")
+    @PutMapping(EMPLOYEE_ENDPOINT_ID)
     public ResponseEntity<Void> updateEmployee(@RequestBody Employee employee, @PathVariable int employee_id) {
         if (employeeService.updateById(employee_id, employee) == null) {
             return ResponseEntity.notFound().build();
         }
         return ResponseEntity.noContent().build(); // Success
     }
-    @DeleteMapping("/employees/{employee_id}")
+    @DeleteMapping(EMPLOYEE_ENDPOINT_ID)
     public ResponseEntity<Employee> deleteEmployee(@PathVariable int employee_id) {
         Employee employee = employeeService.findById(employee_id);
         if (employee == null) {
