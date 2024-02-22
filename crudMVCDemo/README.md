@@ -16,6 +16,8 @@ This is a very basic CRUD (Create, Read, Update, Delete) web application built u
 ## Description
 
 This CRUD web application allows you to perform basic operations on data entities (employees) using a user-friendly interface.
+![Listing entities](https://github.com/bodoque007/Spring-BOOT/assets/63447579/6398e9ab-971d-4a25-b523-d1ddeb7b65a9)
+![Addind new entity](https://github.com/bodoque007/Spring-BOOT/assets/63447579/446a7e50-96d2-48b7-887c-f77d4f86b3f9)
 
 ## How to Run
 
