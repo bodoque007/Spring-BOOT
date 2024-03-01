@@ -30,6 +30,22 @@ This project provides a RESTful API for basic CRUD operations on an employee dat
    mvn spring-boot:run
 6. Go to http://localhost:8080/employees by default, if you haven't changed the app's port. 
 ## Usage
-For HTTP Verbs, the api follows REST principles (for example, to get the employee with ID 1, make a get request to localhost:8080/employee/1. 
-To delete or put an employee with id "employee_id", do the corresponding request to localhost:8080/employees/{employee_id}. Remember to include the employee in JSON format if you're updating, just including the firstName, lastName and email properties). It requires external software as Postman to post, put or delete. Thus, the version in crudMVCDemo is more user-friendly, as it's instead an MVC CRUD web app that implements a UI to add, delete or update employees.
-If you wish to indicate a custom pageNumber or pageSize when getting all employees (GET URL /employees), indicate this with a query parameter of the corresponding name. For example, http://localhost:8080/employees?pageSize=3. The size is set to 10 by default, and cannot exceed 100.
+
+The API adheres to REST principles, making it intuitive to interact with. For example, to retrieve information about an employee with ID 1, simply make a GET request to:
+
+```bash
+GET localhost:8080/employee/1
+```
+For updating or deleting an employee with a specific ID (employee_id), use the corresponding request to:
+```bash
+PUT or DELETE localhost:8080/employees/{employee_id}
+```
+When updating, remember to include the employee details in JSON format, specifying the firstName, lastName, and email properties.
+
+To interact with the API, you can use external tools like Postman for POST, PUT, and DELETE requests. Alternatively, for a more user-friendly experience, consider using the version available in crudMVCDemo. It's an MVC CRUD web app that provides a graphical UI for adding, deleting, or updating employees, yet this version is more developed.
+
+If you want to customize the number of employees displayed or control the page size when retrieving all employees (GET URL /employees), you can use query parameters. For example:
+```bash
+GET http://localhost:8080/employees?pageSize=3
+```
+By default, the page size is set to 10 and cannot exceed 100. Feel free to adjust the query parameters according to your preferences.
