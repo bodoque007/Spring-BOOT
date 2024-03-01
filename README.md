@@ -1,6 +1,6 @@
 # Spring Boot Projects
 
-This repository contains several Spring Boot projects for learning and practice.
+The two following are the main and most complete projects:
 
 - **crudMVCDemo:** Comprehensive CRUD application with MVC architecture.
 - **RESTAPI:** Another significant project showcasing the implementation of a basic REST API with its corresponding CRUD HTTP methods.
