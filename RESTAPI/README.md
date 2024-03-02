@@ -5,6 +5,8 @@
 ![MySQL Connector](https://img.shields.io/badge/MySQL%20Connector-runtime-yellow?style=flat&logo=mysql)
 ![OpenCSV](https://img.shields.io/badge/OpenCSV-5.7.1-green?style=flat&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAfklEQVR42mP8//8/w0AUgBmLCJxAxqsQCTMQAAAABJRU5ErkJggg==)
 ![Lombok](https://img.shields.io/badge/Lombok-1.18.30-blue?style=flat&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAmklEQVR42mP8//8/w0AUgBmLCJxAxqsQCTMQAAAABJRU5ErkJggg==)
+![JUnit](https://img.shields.io/badge/JUnit-5-orange?style=flat&logo=junit)
+![Mockito](https://img.shields.io/badge/Mockito-3.12.4-red?style=flat&logo=mockito)
 
 A simple CRUD (Create, Read, Update, Delete) API project for managing employee records.
 
@@ -17,6 +19,8 @@ This project provides a RESTful API for basic CRUD operations on an employee dat
 - [MySQL](https://www.mysql.com/) for data storage and retrieval.
 - [OpenCSV](https://github.com/opencsv/opencsv) for CSV parsing.
 - [Project Lombok](https://projectlombok.org/) for reducing boilerplate code in Java.
+- [JUnit](https://junit.org/) for unit testing.
+- [Mockito](https://site.mockito.org/) for mocking objects in tests.
 
 ## How to Run
 
