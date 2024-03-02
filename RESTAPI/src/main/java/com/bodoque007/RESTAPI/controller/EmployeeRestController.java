@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class EmployeeRestController {
     private final EmployeeService employeeService;
-    private static final String EMPLOYEE_ENDPOINT = "/employees";
-    private static final String EMPLOYEE_ENDPOINT_ID = EMPLOYEE_ENDPOINT + "/{employee_id}";
+    public static final String EMPLOYEE_ENDPOINT = "/employees";
+    public static final String EMPLOYEE_ENDPOINT_ID = EMPLOYEE_ENDPOINT + "/{employee_id}";
     public EmployeeRestController(EmployeeService employeeService) {
         this.employeeService = employeeService;
     }
@@ -30,7 +30,7 @@ public class EmployeeRestController {
     public ResponseEntity<Employee> getByID(@PathVariable int employee_id) {
         Employee employee = employeeService.findById(employee_id);
         if (employee == null) {
-            return ResponseEntity.notFound().build();
+            throw new NotFoundException();
         }
         return ResponseEntity.ok(employee);
     }
@@ -46,7 +46,7 @@ public class EmployeeRestController {
     @PutMapping(EMPLOYEE_ENDPOINT_ID)
     public ResponseEntity<Void> updateEmployee(@RequestBody Employee employee, @PathVariable int employee_id) {
         if (employeeService.updateById(employee_id, employee) == null) {
-            return ResponseEntity.notFound().build();
+            throw new NotFoundException();
         }
         return ResponseEntity.noContent().build(); // Success
     }
@@ -54,7 +54,7 @@ public class EmployeeRestController {
     public ResponseEntity<Employee> deleteEmployee(@PathVariable int employee_id) {
         Employee employee = employeeService.findById(employee_id);
         if (employee == null) {
-            return ResponseEntity.notFound().build();
+            throw new NotFoundException();
         }
         employeeService.deleteById(employee_id);
         return ResponseEntity.noContent().build();
