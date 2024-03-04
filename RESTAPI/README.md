@@ -7,6 +7,8 @@
 ![Lombok](https://img.shields.io/badge/Lombok-1.18.30-blue?style=flat&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAmklEQVR42mP8//8/w0AUgBmLCJxAxqsQCTMQAAAABJRU5ErkJggg==)
 ![JUnit](https://img.shields.io/badge/JUnit-5-orange?style=flat&logo=junit)
 ![Mockito](https://img.shields.io/badge/Mockito-3.12.4-red?style=flat&logo=mockito)
+![Redis](https://img.shields.io/badge/Redis-6.2.5-red?style=flat&logo=redis)
+
 
 A simple CRUD (Create, Read, Update, Delete) API project for managing employee records.
 
@@ -21,18 +23,23 @@ This project provides a RESTful API for basic CRUD operations on an employee dat
 - [Project Lombok](https://projectlombok.org/) for reducing boilerplate code in Java.
 - [JUnit](https://junit.org/) for unit testing.
 - [Mockito](https://site.mockito.org/) for mocking objects in tests.
-
+- [Redis](https://redis.io/) for caching and improving requests performance.
 ## How to Run
 
-1. Ensure you have Java 17 and Maven installed.
+1. Ensure you have Java 17, Maven and Redis (for caching) installed.
 2. Clone this repository.
 3. Configure your MySQL database details in the application.properties file.
     - By default, the database is set to localhost:3036 with root as both the username and password. The database should be created using the sql script inside the "sql-scripts" folder.
 4. Go to the repository's location
-5. Run the application using Maven:
+5. Run Redis server
+   - Open a terminal and run the following command to start the Redis server. You can change the port Redis will use in application.properties. By default, it's 6484.
+     ```bash
+     redis-server --port 6484
+     ```
+6. Run the application using Maven:
    ```bash
    mvn spring-boot:run
-6. Go to http://localhost:8080/employees by default, if you haven't changed the app's port. 
+7. Go to http://localhost:8080/employees by default, if you haven't changed the app's port. 
 ## Usage
 
 The API adheres to REST principles, making it intuitive to interact with. For example, to retrieve information about an employee with ID 1, simply make a GET request to:

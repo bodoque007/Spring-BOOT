@@ -3,6 +3,9 @@ package com.bodoque007.RESTAPI.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.io.Serial;
+import java.io.Serializable;
+
 @Entity
 @Getter
 @Setter
@@ -10,7 +13,7 @@ import lombok.*;
 @Builder
 @AllArgsConstructor
 @Table(name="employee")
-public class Employee {
+public class Employee implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")

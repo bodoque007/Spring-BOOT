@@ -4,11 +4,13 @@ package com.bodoque007.RESTAPI.service;
 import com.bodoque007.RESTAPI.entity.Employee;
 import com.bodoque007.RESTAPI.repository.EmployeeRepository;
 import jakarta.transaction.Transactional;
+import org.springframework.cache.annotation.*;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+@CacheConfig(cacheNames = "employee")
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
 
@@ -22,6 +24,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
 
+    @Cacheable(value = "allemployeecache")
     @Override
     public Page<Employee> findAll(Integer pageNumber, Integer pageSize) {
         PageRequest page = createPageRequest(pageNumber, pageSize);
@@ -50,7 +53,8 @@ public class EmployeeServiceImpl implements EmployeeService {
         return PageRequest.of(queryPageNumber, queryPageSize, sort);
     }
 
-    @Override
+
+    @Cacheable(value = "employeecache", key = "#id")
     public Employee findById(int id) {
 //        Optional<Employee> result = employeeRepository.findById(id);
 //        Employee employee = null;
@@ -64,6 +68,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
 
+
+    @Caching(evict = {@CacheEvict(value = "allemployeecache", allEntries = true),
+    @CacheEvict(value = "employeecache", key = "#employee.id")})
     @Override
     @Transactional
     public Employee save(Employee employee) {
@@ -73,12 +80,16 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     @Transactional
+    @Caching(evict = {@CacheEvict(value = "allemployeecache", allEntries = true),
+            @CacheEvict(value = "employeecache", key = "#id")
+    })
     public void deleteById(int id) {
         employeeRepository.deleteById(id);
     }
 
     @Override
     @Transactional
+    @CachePut(value = "employeecache", key = "#id")
     public Employee updateById(int id, Employee employee) {
         Employee foundEmployee = employeeRepository.findById(id).orElse(null);
 
