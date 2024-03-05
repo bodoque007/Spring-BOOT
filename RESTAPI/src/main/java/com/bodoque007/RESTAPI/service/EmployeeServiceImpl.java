@@ -32,22 +32,15 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     private PageRequest createPageRequest(Integer pageNumber, Integer pageSize) {
-        int queryPageNumber;
-        int queryPageSize;
+        int queryPageNumber = DEFAULT_PAGE;
+        int queryPageSize = DEFAULT_PAGE_SIZE;
         if (pageNumber != null && pageNumber > 0) {
-            // Sets proper offset, as pageNumber in Spring Data starts from 0, not 1.
-            queryPageNumber = pageNumber - 1;
-        } else {
-            queryPageNumber = DEFAULT_PAGE;
+            queryPageNumber = pageNumber;
         }
-        if (pageSize == null) {
-            queryPageSize = DEFAULT_PAGE_SIZE;
-        } else {
-            if (pageSize > 100) {
-                queryPageSize = 100;
-            } else {
-                queryPageSize = pageSize;
-            }
+        if (pageSize != null && pageSize > 100) {
+            queryPageSize = 100;
+        } else if (pageSize != null) {
+            queryPageSize = pageSize;
         }
         Sort sort = Sort.by("lastName").descending();
         return PageRequest.of(queryPageNumber, queryPageSize, sort);

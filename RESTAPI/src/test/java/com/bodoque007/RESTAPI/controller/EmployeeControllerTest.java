@@ -19,8 +19,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 
-@WebMvcTest(EmployeeRestController.class)
-public class EmployeeController {
+@WebMvcTest(EmployeeController.class)
+public class EmployeeControllerTest {
     @Autowired
     MockMvc mockMvc;
 
@@ -42,7 +42,7 @@ public class EmployeeController {
 
         given(employeeService.findById(employee.getId())).willReturn(employee);
 
-        mockMvc.perform(get(EmployeeRestController.EMPLOYEE_ENDPOINT_ID, employee.getId())
+        mockMvc.perform(get(EmployeeController.EMPLOYEE_ENDPOINT_ID, employee.getId())
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
@@ -54,7 +54,7 @@ public class EmployeeController {
     void findByIdNotFound() throws Exception {
         given(employeeService.findById(any(Integer.class))).willReturn(null);
 
-        mockMvc.perform(get(EmployeeRestController.EMPLOYEE_ENDPOINT_ID, 1))
+        mockMvc.perform(get(EmployeeController.EMPLOYEE_ENDPOINT_ID, 1))
                 .andExpect(status().isNotFound());
     }
 
@@ -63,7 +63,7 @@ public class EmployeeController {
         Employee employee = Employee.builder().firstName("Eren").email("yageya@gmail.com").build();
         given(employeeService.save(any(Employee.class))).willReturn(employee);
 
-        mockMvc.perform(post(EmployeeRestController.EMPLOYEE_ENDPOINT)
+        mockMvc.perform(post(EmployeeController.EMPLOYEE_ENDPOINT)
                 .accept(MediaType.APPLICATION_JSON)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(employee)))

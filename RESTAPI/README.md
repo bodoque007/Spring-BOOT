@@ -36,11 +36,17 @@ This project provides a RESTful API for basic CRUD operations on an employee dat
      ```bash
      redis-server --port 6484
      ```
+     Or add the following to the application.properties file to disable cache.
+   - ```bash
+     spring.cache.type=none
+     ```
 6. Run the application using Maven:
    ```bash
    mvn spring-boot:run
 7. Go to http://localhost:8080/employees by default, if you haven't changed the app's port. 
 ## Usage
+**This is important!**
+*While the following documentation is still right, you can better read (and interact) with the swagger documentation for the API at http://localhost:8080/swagger-ui/index.html*
 
 The API adheres to REST principles, making it intuitive to interact with. For example, to retrieve information about an employee with ID 1, simply make a GET request to:
 
@@ -57,6 +63,6 @@ To interact with the API, you can use external tools like Postman for POST, PUT,
 
 If you want to customize the number of employees displayed or control the page size when retrieving all employees (GET URL /employees), you can use query parameters. For example:
 ```bash
-GET http://localhost:8080/employees?pageSize=3
+GET http://localhost:8080/employees?size=3
 ```
 By default, the page size is set to 10 and cannot exceed 100. Feel free to adjust the query parameters according to your preferences.

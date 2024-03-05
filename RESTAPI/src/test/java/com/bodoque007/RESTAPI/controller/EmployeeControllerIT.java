@@ -3,7 +3,6 @@ package com.bodoque007.RESTAPI.controller;
 import com.bodoque007.RESTAPI.entity.Employee;
 import com.bodoque007.RESTAPI.repository.EmployeeRepository;
 import jakarta.transaction.Transactional;
-import org.apache.coyote.Response;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +23,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 public class EmployeeControllerIT {
     @Autowired
-    EmployeeRestController employeeRestController;
+    EmployeeController employeeController;
 
     @Autowired
     EmployeeRepository employeeRepository;
@@ -40,8 +39,8 @@ public class EmployeeControllerIT {
 
     @Test
     void testFindAllPageSize8() throws Exception {
-        mockMvc.perform(get("/employees")
-                .queryParam("pageSize", "8"))
+        mockMvc.perform(get(EmployeeController.EMPLOYEE_ENDPOINT)
+                .queryParam("size", "8"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.content.size()", is(8)));
     }
@@ -51,7 +50,7 @@ public class EmployeeControllerIT {
     void deleteByIdFound() {
         Employee employee = employeeRepository.findAll().get(0);
 
-        ResponseEntity responseEntity = employeeRestController.deleteEmployee(employee.getId());
+        ResponseEntity responseEntity = employeeController.deleteEmployee(employee.getId());
         assertThat(responseEntity.getStatusCode()).isEqualTo(HttpStatusCode.valueOf(204));
         // Employee was indeed deleted
         assertThat(employeeRepository.findById(employee.getId()).isEmpty());
@@ -65,7 +64,7 @@ public class EmployeeControllerIT {
         final String updatedName = "UPDATED NAME";
         employee.setFirstName(updatedName);
 
-        ResponseEntity<Void> responseEntity =  employeeRestController.updateEmployee(employee, employee.getId());
+        ResponseEntity<Void> responseEntity =  employeeController.updateEmployee(employee, employee.getId());
         assertThat(responseEntity.getStatusCode()).isEqualTo(HttpStatusCode.valueOf(204));
 
         // Check if the employee's name actually changed in the database.
@@ -79,7 +78,7 @@ public class EmployeeControllerIT {
     void saveNewEmployee() {
         Employee employee = Employee.builder().firstName("Ada").email("lovelace@gmail.com").build();
 
-        ResponseEntity responseEntity = employeeRestController.addEmployee(employee);
+        ResponseEntity responseEntity = employeeController.addEmployee(employee);
 
         assertThat(responseEntity.getStatusCode()).isEqualTo(HttpStatusCode.valueOf(201));
         assertThat(responseEntity.getHeaders().getLocation()).isNotNull();
