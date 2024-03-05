@@ -8,9 +8,9 @@
 ![JUnit](https://img.shields.io/badge/JUnit-5-orange?style=flat&logo=junit)
 ![Mockito](https://img.shields.io/badge/Mockito-3.12.4-red?style=flat&logo=mockito)
 ![Redis](https://img.shields.io/badge/Redis-6.2.5-red?style=flat&logo=redis)
+[![springdoc-openapi](https://img.shields.io/badge/springdoc--openapi-1.6.4-green?style=flat&logo=spring)](https://springdoc.org/)
 
-
-A simple CRUD (Create, Read, Update, Delete) API project for managing employee records.
+A simple CRUD (Create, Read, Update, Delete) API project for managing employee records. 
 
 ## Description
 
@@ -24,6 +24,7 @@ This project provides a RESTful API for basic CRUD operations on an employee dat
 - [JUnit](https://junit.org/) for unit testing.
 - [Mockito](https://site.mockito.org/) for mocking objects in tests.
 - [Redis](https://redis.io/) for caching and improving requests performance.
+- [OpenApi](https://springdoc.org/) for documentation generation.
 ## How to Run
 
 1. Ensure you have Java 17, Maven and Redis (for caching) installed.
