@@ -11,6 +11,7 @@
 [![springdoc-openapi](https://img.shields.io/badge/springdoc--openapi-1.6.4-green?style=flat&logo=spring)](https://springdoc.org/)
 
 A simple CRUD (Create, Read, Update, Delete) API project for managing employee records. 
+![App documentation](https://github.com/bodoque007/Spring-BOOT/assets/63447579/367e3db8-9001-4cba-93f0-f9daf26e43ba)
 
 ## Description
 
