@@ -45,7 +45,10 @@ This project provides a RESTful API for basic CRUD operations on an employee dat
 6. Run the application using Maven:
    ```bash
    mvn spring-boot:run
-7. Go to http://localhost:8080/employees by default, if you haven't changed the app's port. 
+7. Get your token by making a POST request to http://localhost:8080/token with with basic authentication using the username "eren" and password "password". You can use tools like cURL or Postman.
+
+## Note on security
+The JWT implementation in this project is for educational purposes only. The user "eren" is an in-memory user, and the public and private keys are exposed for demonstration purposes. In a production environment, secure practices should be followed for user authentication and key management.
 ## Usage
 **This is important!**
 *While the following documentation is still right, you can better read (and interact) with the swagger documentation for the API at http://localhost:8080/swagger-ui/index.html*

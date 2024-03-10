@@ -9,6 +9,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -40,6 +41,7 @@ public class EmployeeController {
         return ResponseEntity.ok(employee);
     }
     @PostMapping(EMPLOYEE_ENDPOINT)
+    @PreAuthorize("hasAuthority('write')")
     public ResponseEntity<Employee> addEmployee(@RequestBody Employee employee) {
         employee.setId(0);
         Employee savedEmployee = employeeService.save(employee);
@@ -49,6 +51,7 @@ public class EmployeeController {
     }
 
     @PutMapping(EMPLOYEE_ENDPOINT_ID)
+    @PreAuthorize("hasAuthority('write')")
     public ResponseEntity<Void> updateEmployee(@RequestBody Employee employee, @PathVariable int employee_id) {
         if (employeeService.updateById(employee_id, employee) == null) {
             throw new NotFoundException();
@@ -56,6 +59,7 @@ public class EmployeeController {
         return ResponseEntity.noContent().build(); // Success
     }
     @DeleteMapping(EMPLOYEE_ENDPOINT_ID)
+    @PreAuthorize("hasAuthority('write')")
     public ResponseEntity<Employee> deleteEmployee(@PathVariable int employee_id) {
         Employee employee = employeeService.findById(employee_id);
         if (employee == null) {
